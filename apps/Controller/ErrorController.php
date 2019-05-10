@@ -31,9 +31,18 @@
  * @copyright (c) 2012, Nick Gejadze
  */
 class ErrorController extends NG\Controller {
+    protected $config;
+    protected $cache;
+    protected $session;
+    protected $cookie;
+    protected $helper;
 
     public function init() {
-        
+        $this->config = $this->view->config = \NG\Registry::get('config');
+        $this->session = $this->view->session = new \NG\Session();
+        $this->cookie = $this->view->cookie = new \NG\Cookie();
+        $this->cache = $this->view->cache = new \NG\Cache();
+        $this->helper = $this->view->helper = new Helper();
     }
 
     public function IndexAction() {
