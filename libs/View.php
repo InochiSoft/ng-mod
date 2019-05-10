@@ -145,7 +145,7 @@ class View {
                 if (isset($configData['COMPACT_MODE'])){
                     $compactMode = $configData['COMPACT_MODE'];
                 }
-                if ($compactMode == 1){
+                if ($compactMode >= 1){
                     ob_start();
                     include ($layoutFile);
                     $content = ob_get_clean();

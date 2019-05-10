@@ -334,8 +334,9 @@ class Route {
     }
     
     private static function syncController($controller){
-        $arr_route = array(
+        $arr_route_path = array(
             "index",
+            "asset",
             defined("ROUTE_PATH_1") ? ROUTE_PATH_1 : "",
             defined("ROUTE_PATH_2") ? ROUTE_PATH_2 : "",
             defined("ROUTE_PATH_3") ? ROUTE_PATH_3 : "",
@@ -343,8 +344,9 @@ class Route {
             defined("ROUTE_PATH_5") ? ROUTE_PATH_5 : ""
         );
         
-        $arr_new_name = array(
+        $arr_route_name = array(
             "index",
+            "asset",
             defined("ROUTE_NAME_1") ? ROUTE_NAME_1 : "",
             defined("ROUTE_NAME_2") ? ROUTE_NAME_2 : "",
             defined("ROUTE_NAME_3") ? ROUTE_NAME_3 : "",
@@ -354,11 +356,11 @@ class Route {
         
         $new_control = $controller;
         
-        for ($i = 0; $i < count($arr_config_name); $i++){
-            $item_new_name = $arr_new_name[$i];
-            $item_config_name = $arr_config_name[$i];
-            if (strtolower($new_control) == strtolower($item_config_name)){
-                $new_control = $item_new_name;
+        for ($i = 0; $i < count($arr_route_path); $i++){
+            $item_route_name = $arr_route_name[$i];
+            $item_route_path = $arr_route_path[$i];
+            if (strtolower($new_control) == strtolower($item_route_path)){
+                $new_control = $item_route_name;
                 break;
             }
         }

@@ -52,6 +52,11 @@ class IndexController extends NG\Controller {
         $session = $this->session;
         $cookie = $this->cookie;
         $cache = $this->cache;
+        
+        $this->view->viewTitle = 'Home';
+        $this->view->viewKeywords = 'NG, Framework';
+        $this->view->viewDescription = 'Description';
+        $this->view->viewImage = '';
     }
 }
 
