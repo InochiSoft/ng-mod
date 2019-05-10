@@ -36,12 +36,14 @@ class IndexController extends NG\Controller {
     protected $cache;
     protected $session;
     protected $cookie;
+    protected $helper;
     
     public function init() {
         $this->config = $this->view->config = \NG\Registry::get('config');
         $this->session = $this->view->session = new \NG\Session();
         $this->cookie = $this->view->cookie = new \NG\Cookie();
         $this->cache = $this->view->cache = new \NG\Cache();
+        $this->helper = $this->view->helper = new Helper();
     }
     
     public function IndexAction() {
@@ -50,24 +52,6 @@ class IndexController extends NG\Controller {
         $session = $this->session;
         $cookie = $this->cookie;
         $cache = $this->cache;
-        
-        $today = date('Y-m-d');
-        $user = 'Novian Agung';
-        $data = array("id" => 12345, 'name' => 'novianagung');
-        
-        $date_session = $session->get("date");
-        if (!$date_session) $session->set("date", $today);
-        
-        $user_cookie = $cookie->get("user");
-        $expire = time() + 30 * 24 * 60 * 60;
-        if (!$user_cookie) $cookie->set("user", $user, $expire);
-        
-        $date_cache = $cache->get("data");
-        if (!$date_cache) $cache->set("data", $data);
-        
-        $this->view->viewTitle = "Selamat Datang";
-        $this->view->viewKeywords = "beranda, ng framework";
-        $this->view->viewDescription = "Halaman beranda NG framework";
     }
 }
 

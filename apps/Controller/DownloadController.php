@@ -23,7 +23,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class NewsController extends NG\Controller {
+class DownloadController extends NG\Controller {
     protected $config;
     protected $cache;
     protected $session;
@@ -42,10 +42,6 @@ class NewsController extends NG\Controller {
         $session = $this->session;
         $cookie = $this->cookie;
         $cache = $this->cache;
-        
-        $this->view->viewTitle = "News";
-        $this->view->viewKeywords = "";
-        $this->view->viewDescription = "";
     }
 }
 

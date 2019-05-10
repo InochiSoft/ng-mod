@@ -182,6 +182,12 @@ class Uri {
      */
     public function getPathChunks() {
         if (isset($this->requestedPath)):
+            $newPathRequests = explode('?', trim($this->requestedPath, '?'));
+            $arrCount = count($newPathRequests);
+            
+            $newPathRequest = $newPathRequests[0];
+            $this->requestedPath = $newPathRequest;
+            
             $pathChunks = explode('/', trim($this->requestedPath, '/'));
             $rootChunks = explode('/', trim($this->rootPath, '/'));
             self::init()->subdirectories = array_intersect($pathChunks, $rootChunks);
@@ -202,6 +208,5 @@ class Uri {
         $server = str_replace("www.", "", $server);
         return $server;
     }
-    
 }
 

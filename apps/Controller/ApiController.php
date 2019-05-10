@@ -54,49 +54,6 @@ class ApiController extends NG\Controller {
         $cookie = $this->cookie;
         $cache = $this->cache;
         
-        $param1 = "";
-        $param2 = "";
-        $param3 = "";
-        $param4 = "";
-        $param5 = "";
-        $param6 = "";
-        
-        if (isset($requests['param1'])){
-            $param1 = $requests['param1'];
-            $param1 = urldecode($param1);
-            
-            if (isset($requests['param2'])){
-                $param2 = $requests['param2'];
-                $param2 = urldecode($param2);
-                
-                if (isset($requests['param3'])){
-                    $param3 = $requests['param3'];
-                    $param3 = urldecode($param3);
-                    
-                    if (isset($requests['param4'])){
-                        $param4 = $requests['param4'];
-                        $param4 = urldecode($param4);
-
-                        if (isset($requests['param5'])){
-                            $param5 = $requests['param5'];
-                            $param5 = urldecode($param5);
-                            
-                            if (isset($requests['param6'])){
-                                $param6 = $requests['param6'];
-                                $param6 = urldecode($param6);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        if ($param1 == "get"){
-            if ($param2 == "user"){
-                $result = $cache->get("data");
-            }
-        }
-        
         if ($result){
             $print_text = json_encode($result);
             

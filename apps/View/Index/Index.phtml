@@ -4,20 +4,4 @@
     $cache = $this->cache;
 ?>
 
-<p>
-<?php echo "Hallo"; ?>
-</p>
-<p>
-    <?php echo $session->get("date"); ?>
-</p>
-<p>
-    <?php echo $cookie->get("user"); ?>
-</p>
-<p>
-    <?php 
-        $data = $cache->get("data"); 
-        if (is_array($data)){
-            echo $data['id'] . '<br />' .  $data['name'];
-        }
-    ?>
-</p>
+<p>Welcome to NG Framework</p>

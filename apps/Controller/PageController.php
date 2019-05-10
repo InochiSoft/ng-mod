@@ -40,63 +40,8 @@ class PageController extends NG\Controller {
         $requests = \NG\Route::getRequests();
         
         $session = $this->session;
-        $config = $this->config;
-        
-        $param1 = "";
-        $param2 = "";
-        $param3 = "";
-        $param4 = "";
-        $param5 = "";
-        $param6 = "";
-        
-        if (isset($requests['param1'])){
-            $param1 = $requests['param1'];
-            $param1 = urldecode($param1);
-            
-            if (isset($requests['param2'])){
-                $param2 = $requests['param2'];
-                $param2 = urldecode($param2);
-                
-                if (isset($requests['param3'])){
-                    $param3 = $requests['param3'];
-                    $param3 = urldecode($param3);
-                    
-                    if (isset($requests['param4'])){
-                        $param4 = $requests['param4'];
-                        $param4 = urldecode($param4);
-
-                        if (isset($requests['param5'])){
-                            $param5 = $requests['param5'];
-                            $param5 = urldecode($param5);
-                            
-                            if (isset($requests['param6'])){
-                                $param6 = $requests['param6'];
-                                $param6 = urldecode($param6);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        $viewTitle = "";
-        $viewContent = "";
-        $viewDescription = "";
-        $viewKeywords = "";
-        $viewImage = "";
-        
-        if ($param1 == "tentang"){
-            $viewTitle = CAT_TITLE_1 . ' Tentang - ' . SITE_NAME;
-            $viewKeywords = "halaman, tentang, ng framework";
-            $viewDescription = "Halaman tentang NG Framework";
-            $viewContent = "<p>Selamat menggunakan NG Framework. NG Framework adalah....</p>";
-        }
-        
-        $this->view->viewImage = $viewImage;
-        $this->view->viewTitle = $viewTitle;
-        $this->view->viewContent = $viewContent;
-        $this->view->viewKeywords = $viewKeywords;
-        $this->view->viewDescription = $viewDescription;
+        $cookie = $this->cookie;
+        $cache = $this->cache;
     }
 }
 

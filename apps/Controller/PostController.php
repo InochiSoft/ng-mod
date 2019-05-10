@@ -42,10 +42,6 @@ class PostController extends NG\Controller {
         $session = $this->session;
         $cookie = $this->cookie;
         $cache = $this->cache;
-        
-        $this->view->viewTitle = "Selamat Datang";
-        $this->view->viewKeywords = "";
-        $this->view->viewDescription = "";
     }
 }
 
